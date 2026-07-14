@@ -1,25 +1,44 @@
+import MainLayout from "@/components/layout/MainLayout";
+import { Card } from "@/components/ui/card";
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen items-center justify-center bg-slate-100">
-      <div className="text-center">
-        <h1 className="text-5xl font-bold text-slate-900">
-          RTI
-        </h1>
+    <MainLayout>
+      <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+        <Card className="p-6">
+          <h3 className="text-sm text-slate-500">Receita Mensal</h3>
+          <p className="mt-3 text-3xl font-bold">R$ 0,00</p>
+        </Card>
 
-        <p className="mt-4 text-xl text-slate-600">
-          Rofial Tax Intelligence
-        </p>
+        <Card className="p-6">
+          <h3 className="text-sm text-slate-500">Economia Tributária</h3>
+          <p className="mt-3 text-3xl font-bold text-green-600">
+            R$ 0,00
+          </p>
+        </Card>
 
-        <div className="mt-10 rounded-xl border border-slate-200 bg-white p-8 shadow-lg">
-          <h2 className="text-2xl font-semibold">
-            Sistema em desenvolvimento
+        <Card className="p-6">
+          <h3 className="text-sm text-slate-500">Melhor Regime</h3>
+          <p className="mt-3 text-xl font-bold">--</p>
+        </Card>
+
+        <Card className="p-6">
+          <h3 className="text-sm text-slate-500">Fator R</h3>
+          <p className="mt-3 text-3xl font-bold text-blue-600">0%</p>
+        </Card>
+      </div>
+
+      <div className="mt-8">
+        <Card className="p-8 h-[400px]">
+          <h2 className="text-2xl font-bold">
+            Bem-vindo ao RTI
           </h2>
 
           <p className="mt-4 text-slate-500">
-            Sprint 3 - Dashboard Premium
+            Plataforma Inteligente de Planejamento Tributário.
           </p>
-        </div>
+        </Card>
       </div>
-    </main>
+    </MainLayout>
   );
 }

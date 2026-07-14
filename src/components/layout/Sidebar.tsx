@@ -1,68 +1,102 @@
 "use client";
 
+import Link from "next/link";
 import {
   LayoutDashboard,
-  Building2,
   Users,
+  Building2,
   Calculator,
-  FileText,
+  FileSpreadsheet,
   Settings,
+  BarChart3,
 } from "lucide-react";
 
 const menu = [
   {
     title: "Dashboard",
+    href: "/",
     icon: LayoutDashboard,
   },
   {
     title: "Clientes",
+    href: "/clientes",
     icon: Users,
   },
   {
     title: "Empresas",
+    href: "/empresas",
     icon: Building2,
   },
   {
     title: "Planejamento",
+    href: "/planejamento",
     icon: Calculator,
   },
   {
+    title: "Simulações",
+    href: "/simulacoes",
+    icon: BarChart3,
+  },
+  {
     title: "Relatórios",
-    icon: FileText,
+    href: "/relatorios",
+    icon: FileSpreadsheet,
   },
   {
     title: "Configurações",
+    href: "/configuracoes",
     icon: Settings,
   },
 ];
 
 export default function Sidebar() {
   return (
-    <aside className="w-72 bg-slate-900 text-white flex flex-col">
-      <div className="border-b border-slate-800 p-8">
-        <h1 className="text-3xl font-bold tracking-tight">RTI</h1>
+    <aside className="flex h-screen w-72 flex-col border-r border-slate-800 bg-slate-950 text-white">
 
-        <p className="mt-1 text-sm text-slate-400">
+      <div className="border-b border-slate-800 px-8 py-7">
+
+        <h1 className="text-3xl font-bold tracking-tight text-blue-500">
+          RTI
+        </h1>
+
+        <p className="mt-2 text-sm text-slate-400">
           Rofial Tax Intelligence
         </p>
+
       </div>
 
       <nav className="flex-1 px-4 py-6">
+
         {menu.map((item) => {
+
           const Icon = item.icon;
 
           return (
-            <button
-              key={item.title}
-              className="mb-2 flex w-full items-center gap-3 rounded-xl px-4 py-3 text-left transition hover:bg-slate-800"
+            <Link
+              key={item.href}
+              href={item.href}
+              className="mb-2 flex items-center gap-3 rounded-xl px-4 py-3 transition hover:bg-slate-800"
             >
+
               <Icon size={20} />
 
               <span>{item.title}</span>
-            </button>
+
+            </Link>
           );
+
         })}
+
       </nav>
+
+      <div className="border-t border-slate-800 p-6">
+
+        <p className="text-xs text-slate-500">
+          RTI v1.0
+        </p>
+
+      </div>
+
     </aside>
   );
 }
