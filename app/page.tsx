@@ -1,5 +1,5 @@
-import MainLayout from "@/components/layout/MainLayout";
-import { Card } from "@/components/ui/card";
+import MainLayout from "@/src/components/layout/MainLayout";
+import { Card } from "@/src/components/ui/card";
 
 export default function Home() {
   return (
